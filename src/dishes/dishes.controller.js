@@ -70,6 +70,20 @@ function read(req, res, next) {
     res.json({ data: res.locals.dish })
 }
 
+// validates req.body dishId matches req.param dishId
+function validateIdMatches(req, res, next) {
+    const { data: { id } = {} } = req.body
+    const { dishId } = req.params
+    if (id && id !== dishId) {
+        return next({
+            status: 400,
+            message: `Dish id does not match route id. Dish: ${id}, Route: ${dishId}`
+        })
+    } else {
+        next()
+    }
+}
+
 // puts an update in a single dish from dishes-data
 function update(req, res, next) {
     const { data: { name, description, price, image_url } = {} } = req.body
@@ -101,6 +115,7 @@ module.exports = {
 
     update: [
         dishExists,
+        validateIdMatches,
         bodyDataHas("name"),
         bodyDataHas("description"),
         bodyDataHas("price"),
