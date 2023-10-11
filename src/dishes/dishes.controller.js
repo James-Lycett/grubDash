@@ -14,6 +14,43 @@ function list(req, res, next) {
     res.json({ data: dishes})
 }
 
+// validates request body has correct data format
+function bodyDataHas(propertyName) {
+    return function (req, res, next) {
+        const { data = {} } = req.body
+        if (data[propertyName]) {
+            return next()
+        }
+        next({ status: 400, message: `Dish must include a ${propertyName}` })
+    }
+}
+
+// checks if request price is an integer greater than 0
+function validatePriceIsPositiveInteger(req, res, next) {
+    const { data: { price } = {} } = req.body
+    if (!Number.isInteger(price) || Number(price) <= 0) {
+        return next({
+            status: 400,
+            message: `Dish must have a price that is an integer greater than 0`
+        })
+    } else {
+        next()
+    }
+}
+
+function create(req, res, next) {
+    const { data: { name, description, price, image_url } = {} } = req.body
+    const newDish = {
+        id: nextId(),
+        name: name,
+        description: description,
+        price: price,
+        image_url: image_url,
+    }
+    dishes.push(newDish)
+    res.status(201).json({ data: newDish })
+}
+
 function dishExists(req, res, next) {
     const { dishId } = req.params
     const foundDish = dishes.find((dish) => dish.id === dishId)
@@ -36,6 +73,15 @@ function read(req, res, next) {
 module.exports = {
 
     list, 
+
+    create: [
+        bodyDataHas("name"),
+        bodyDataHas("description"),
+        bodyDataHas("price"),
+        bodyDataHas("image_url"),
+        validatePriceIsPositiveInteger,
+        create,
+    ],
 
     read: [dishExists, read],
 
