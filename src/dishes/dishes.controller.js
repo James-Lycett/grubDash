@@ -65,9 +65,23 @@ function dishExists(req, res, next) {
     }
 }
 
+// gets a single dish from dishes-data
 function read(req, res, next) {
     res.json({ data: res.locals.dish })
 }
+
+// puts an update in a single dish from dishes-data
+function update(req, res, next) {
+    const { data: { name, description, price, image_url } = {} } = req.body
+    const dish = res.locals.dish
+    dish.name = name
+    dish.description = description
+    dish.price = price
+    dish.image_url = image_url
+    res.json({ data: dish })
+}
+
+
 
 
 module.exports = {
@@ -84,5 +98,15 @@ module.exports = {
     ],
 
     read: [dishExists, read],
+
+    update: [
+        dishExists,
+        bodyDataHas("name"),
+        bodyDataHas("description"),
+        bodyDataHas("price"),
+        bodyDataHas("image_url"),
+        validatePriceIsPositiveInteger,
+        update,
+    ],
 
 }
