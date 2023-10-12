@@ -14,7 +14,7 @@ function list(req, res, next) {
     res.json({ data: dishes})
 }
 
-// validates request body has correct data format
+// validates post request body has correct data format
 function bodyDataHas(propertyName) {
     return function (req, res, next) {
         const { data = {} } = req.body
