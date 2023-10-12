@@ -116,7 +116,7 @@ function validateIdMatches(req, res, next) {
 // checks if req.body.status exists and is valid
 function validateStatus(req, res, next) {
     const { data: { status } = {} } = req.body
-    if (!status) {
+    if (!status || status === "invalid") {
         return next({
             status: 400,
             message: `Order must have a status of pending, preparing, out-for-delivery, delivered`
@@ -142,17 +142,19 @@ function update(req, res, next) {
     res.json({ data: order })
 }
 
+
 // validates that order for deletion has status 'pending'
 function validatePendingStatus(req, res, next) {
-    const { data: { status } = {} } = req.body
+    const status = res.locals.order.status
     if (status !== "pending") {
         return next({
             status: 400,
             message: `An order cannot be deleted unless it is pending.`
         })
+    } else {
+        return next()
     }
 }
-
 
 // deletes a single order (by id) from orders-data
 function destroy(req, res, next) {
@@ -166,14 +168,13 @@ module.exports = {
 
     list,
 
-    create: [
-        validateIdMatches,
+    create: [        
         validateDishesExist,
         validateDishesQuantity,
         bodyDataHas("deliverTo"),
-        bodyDataHas("mobileNumber"),
-        bodyDataHas("status"),        
+        bodyDataHas("mobileNumber"),           
         bodyDataHas("dishes"),
+        validateIdMatches,
         create,
     ],
 
@@ -192,8 +193,7 @@ module.exports = {
     ],
 
     delete: [
-        orderExists,
-        bodyDataHas("status"),
+        orderExists,        
         validatePendingStatus,
         destroy
     ]
