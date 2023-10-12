@@ -20,8 +20,12 @@ function bodyDataHas(propertyName) {
         const { data = {} } = req.body
         if (data[propertyName]) {
             return next()
+        } else {
+            return next({ 
+                status: 400, 
+                message: `Dish must include a ${propertyName}` 
+            })
         }
-        next({ status: 400, message: `Dish must include a ${propertyName}` })
     }
 }
 
@@ -34,10 +38,12 @@ function validatePriceIsPositiveInteger(req, res, next) {
             message: `Dish must have a price that is an integer greater than 0`
         })
     } else {
-        next()
+        return next()
     }
 }
 
+
+// posts a new dish to dishes-data
 function create(req, res, next) {
     const { data: { name, description, price, image_url } = {} } = req.body
     const newDish = {
@@ -67,7 +73,7 @@ function dishExists(req, res, next) {
     }
 }
 
-// gets a single dish from dishes-data
+// gets a single dish (by id)from dishes-data 
 function read(req, res, next) {
     res.json({ data: res.locals.dish })
 }
@@ -82,7 +88,7 @@ function validateIdMatches(req, res, next) {
             message: `Dish id does not match route id. Dish: ${id}, Route: ${dishId}`
         })
     } else {
-        next()
+        return next()
     }
 }
 
