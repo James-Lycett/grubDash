@@ -11,6 +11,7 @@ router
 
 router
     .route("/:orderId")
+    .get(controller.read)
     .all(methodNotAllowed)
 
 

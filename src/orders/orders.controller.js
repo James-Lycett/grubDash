@@ -78,6 +78,25 @@ function create(req, res, next) {
     res.status(201).json({ data: newOrder })
 }
 
+// validates that order with given id exists in orders-data
+function orderExists(req, res, next) {
+    const { orderId } = req.params
+    const foundOrder = orders.find((order) => order.id === orderId)
+    if (!foundOrder) {
+        next({
+            status: 404,
+            message: `Order ${orderId} not found.`
+        })
+    } else {
+        res.locals.order = foundOrder
+        return next()        
+    }
+}
+
+function read(req, res, next) {
+    res.json({ data: res.locals.order })
+}
+
 
 module.exports = {
 
@@ -91,5 +110,7 @@ module.exports = {
         bodyDataHas("status"),
         bodyDataHas("dishes"),
         create,
-    ]
+    ],
+
+    read: [orderExists, read]
 }

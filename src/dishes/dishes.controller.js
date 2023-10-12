@@ -51,17 +51,19 @@ function create(req, res, next) {
     res.status(201).json({ data: newDish })
 }
 
+
+// validates dish with given id exists in dishes-data
 function dishExists(req, res, next) {
     const { dishId } = req.params
     const foundDish = dishes.find((dish) => dish.id === dishId)
-    if (foundDish) {
-        res.locals.dish = foundDish
-        return next()
-    } else {
+    if (!foundDish) {
         next({
             status: 404,
-            message: `Dish does not exist: ${dishId}.`
-        })
+            message: `Dish ${dishId} not found..`
+        })        
+    } else {
+        res.locals.dish = foundDish
+        return next()
     }
 }
 
