@@ -12,16 +12,18 @@ const app = express();
 // dev server tracking
 app.use(morgan("dev"))
 
-// You have not learned about CORS yet.
-// The following line let's this API be used by any website.
+// lets this API be used by any website
 app.use(cors());
 app.use(express.json());
 
+// url routers
 app.use("/dishes", dishesRouter);
 app.use("/orders", ordersRouter);
 
+// handle 404 errors
 app.use(notFound);
 
+// handle all other errors
 app.use(errorHandler);
 
 module.exports = app;
