@@ -267,8 +267,7 @@ Status 200
 Will delete the order and return a 204 where id === :orderId, or return 404 if no matching order is found.
 
 Example DELETE request:
-
-DELETE ht<span>tps://</span>grubdash-hnp5.onrender.com/orders/3c637d011d844ebab1205fef8a7e36ea
+<br>DELETE ht<span>tps://</span>grubdash-hnp5.onrender.com/orders/3c637d011d844ebab1205fef8a7e36ea
 
 Response:
 Status 204
