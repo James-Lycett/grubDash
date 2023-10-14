@@ -281,3 +281,9 @@ Example DELETE request:
 Response:
 <br>Status 204
 <br>*no response body*
+
+
+
+## Technology
+- App made using Express.js
+- Deployed by Render
