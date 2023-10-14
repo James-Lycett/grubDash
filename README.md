@@ -3,10 +3,10 @@ GrubDash is a RESTful API intended to be used by a Door Dash style food delivery
 
 ## How TO Use Grubdash API
 
-### https://grubdash-hnp5.onrender.com/
+### grubdash-hnp5.onrender.com/
 The home page for the API
 
-### https://grubdash-hnp5.onrender.com/dishes
+### grubdash-hnp5.onrender.com/dishes
 #### - GET 
 Will respond with a list of all existing dish data.
 
@@ -47,7 +47,7 @@ Status 201
 }
 
 
-### https://grubdash-hnp5.onrender.com/dishes/:dishId
+### grubdash-hnp5.onrender.com/dishes/:dishId
 #### - GET
 Will respond with the dish where id === :dishId or return 404 if no matching dish is found.
 
@@ -82,7 +82,7 @@ Request body must have the following format:
 }
 
 Example PUT request:
-PUT http://localhost:5000/dishes/3c637d011d844ebab1205fef8a7e36ea
+PUT grubdash-hnp5.onrender.com/dishes/3c637d011d844ebab1205fef8a7e36ea
 
 Example PUT request body:
 {
@@ -107,7 +107,7 @@ Status 200
   }
 }
 
-### https://grubdash-hnp5.onrender.com/orders
+### grubdash-hnp5.onrender.com/orders
 #### - GET
 Will respond with a list of all existing order data.
 
@@ -173,12 +173,12 @@ Status 201
   }
 }
 
-### https://grubdash-hnp5.onrender.com/orders/:orderId
+### grubdash-hnp5.onrender.com/orders/:orderId
 #### - GET
 Will respond with the order where id === :orderId or return 404 if no matching order is found.
 
 Example GET request:
-GET http://localhost:5000/orders/f6069a542257054114138301947672ba
+GET grubdash-hnp5.onrender.com/orders/f6069a542257054114138301947672ba
 
 Response: 
 Status 200
@@ -267,7 +267,7 @@ Status 200
 Will delete the order and return a 204 where id === :orderId, or return 404 if no matching order is found.
 
 Example DELETE request:
-DELETE http://localhost:5000/dishes/3c637d011d844ebab1205fef8a7e36ea
+DELETE grubdash-hnp5.onrender.com/orders/3c637d011d844ebab1205fef8a7e36ea
 
 Response:
 Status 204
