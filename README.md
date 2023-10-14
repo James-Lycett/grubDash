@@ -30,7 +30,7 @@ Example POST request body:
     "name": "Dolcelatte and chickpea spaghetti",
     "description": "Spaghetti topped with a blend of dolcelatte and fresh chickpeas",
     "price": 19,
-    "image_url": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350"
+    "image_url": "ht<span>tps://</span>images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350"
   }
 }
 
