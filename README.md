@@ -35,7 +35,7 @@ Example POST request body:
 <br>}
 
 Response:
-Status 201
+<br>Status 201
 <br>{
   <br>&nbsp;&nbsp;"data": {
     <br>&nbsp;&nbsp;&nbsp;&nbsp;"id": "d351db2b49b69679504652ea1cf38241",
