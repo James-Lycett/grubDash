@@ -16,12 +16,12 @@ Will save the dish and respond with the newly created dish assigned a unique id.
 
 POST request body must have the following format:
 <br>{
-  <br>"data": {
-    <br>"name": "string",
-    <br>"description": "string",
-    <br>"price": integer > 0,
-    <br>"image_url": "string"
-  <br>}
+  <br>  "data": {
+    <br>    "name": "string",
+    <br>    "description": "string",
+    <br>    "price": integer > 0,
+    <br>    "image_url": "string"
+  <br>  }
 <br>}
 
 Example POST request body:
