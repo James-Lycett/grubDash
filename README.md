@@ -7,11 +7,11 @@ GrubDash is a RESTful API intended to be used by a Door Dash style food delivery
 The home page for the API
 
 ### https://grubdash-hnp5.onrender.com/dishes
-##### - GET 
+#### - GET 
 Will respond with a list of all existing dish data.
 
 
-##### - POST 
+#### - POST 
 Will save the dish and respond with the newly created dish assigned a unique id.
 
 POST request body must have the following format:
@@ -48,7 +48,7 @@ Status 201
 
 
 ### https://grubdash-hnp5.onrender.com/dishes/:dishId
-##### - GET requests 
+#### - GET
 Will respond with the dish where id === :dishId or return 404 if no matching dish is found.
 
 Example GET request:
@@ -67,7 +67,7 @@ Status 200
 }
 
 
-##### - PUT requests 
+#### - PUT
 Will update the dish where id === :dishId or return 404 if no matching dish is found.
 
 Request body must have the following format:
@@ -108,10 +108,10 @@ Status 200
 }
 
 ### https://grubdash-hnp5.onrender.com/orders
-##### - GET requests 
+#### - GET
 Will respond with a list of all existing order data.
 
-#### - POST requests
+#### - POST
 Will save the order and respond with the newly created order.
 
 POST request body must have the following format:
@@ -174,7 +174,7 @@ Status 201
 }
 
 ### https://grubdash-hnp5.onrender.com/orders/:orderId
-##### GET requests
+#### - GET
 Will respond with the order where id === :orderId or return 404 if no matching order is found.
 
 Example GET request:
@@ -201,7 +201,7 @@ Status 200
   }
 }
 
-##### PUT requests
+#### - PUT
 Will update the order where id === :orderId, or return 404 if no matching order is found.
 
 PUT request body must have the following format:
@@ -263,7 +263,7 @@ Status 200
   }
 }
 
-##### DELETE requests
+#### - DELETE
 Will delete the order and return a 204 where id === :orderId, or return 404 if no matching order is found.
 
 Example DELETE request:
