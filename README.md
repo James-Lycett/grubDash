@@ -42,7 +42,7 @@ Status 201
     "name": "Dolcelatte and chickpea spaghetti",
     "description": "Spaghetti topped with a blend of dolcelatte and fresh chickpeas",
     "price": 19,
-    "image_url": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350"
+    "image_url": "ht<span>tps://</span>images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350"
   }
 }
 
@@ -52,7 +52,7 @@ Status 201
 Will respond with the dish where id === :dishId or return 404 if no matching dish is found.
 
 Example GET request:
-GET https://grubdash-hnp5.onrender.com/dishes/3c637d011d844ebab1205fef8a7e36ea
+GET ht<span>tps://</span>grubdash-hnp5.onrender.com/dishes/3c637d011d844ebab1205fef8a7e36ea
 
 Response:
 Status 200
@@ -62,7 +62,7 @@ Status 200
     "name":"Broccoli and beetroot stir fry",
     "description":"Crunchy stir fry featuring fresh broccoli and beetroot",
     "price":15,
-    "image_url":"https://images.pexels.com/photos/4144234/pexels-photo-4144234.jpeg?h=530&w=350"
+    "image_url":"ht<span>tps://</span>images.pexels.com/photos/4144234/pexels-photo-4144234.jpeg?h=530&w=350"
   }
 }
 
@@ -82,7 +82,7 @@ Request body must have the following format:
 }
 
 Example PUT request:
-PUT grubdash-hnp5.onrender.com/dishes/3c637d011d844ebab1205fef8a7e36ea
+PUT ht<span>tps://</span>grubdash-hnp5.onrender.com/dishes/3c637d011d844ebab1205fef8a7e36ea
 
 Example PUT request body:
 {
@@ -144,7 +144,7 @@ Example POST request body:
         "id": "d351db2b49b69679504652ea1cf38241",
         "name": "Dolcelatte and chickpea spaghetti",
         "description": "Spaghetti topped with a blend of dolcelatte and fresh chickpeas",
-        "image_url": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350",
+        "image_url": "ht<span>tps://</span>images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350",
         "price": 19,
         "quantity": 2
       }
@@ -165,7 +165,7 @@ Status 201
         "id": "d351db2b49b69679504652ea1cf38241",
         "name": "Dolcelatte and chickpea spaghetti",
         "description": "Spaghetti topped with a blend of dolcelatte and fresh chickpeas",
-        "image_url": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350",
+        "image_url": "ht<span>tps://</span>images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?h=530&w=350",
         "price": 19,
         "quantity": 2
       }
@@ -193,7 +193,7 @@ Status 200
         "id": "90c3d873684bf381dfab29034b5bba73",
         "name": "Falafel and tahini bagel",
         "description": "A warm bagel filled with falafel and tahini",
-        "image_url": "https://images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
+        "image_url": "ht<span>tps://</span>images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
         "price": 6,
         "quantity": 1
       }
@@ -234,7 +234,7 @@ Example PUT request body:
         "id": "90c3d873684bf381dfab29034b5bba73",
         "name": "Falafel and tahini bagel",
         "description": "A warm bagel filled with falafel and tahini",
-        "image_url": "https://images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
+        "image_url": "ht<span>tps://</span>images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
         "price": 6,
         "quantity": 1
       }
@@ -255,7 +255,7 @@ Status 200
         "id": "90c3d873684bf381dfab29034b5bba73",
         "name": "Falafel and tahini bagel",
         "description": "A warm bagel filled with falafel and tahini",
-        "image_url": "https://images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
+        "image_url": "ht<span>tps://</span>images.pexels.com/photos/4560606/pexels-photo-4560606.jpeg?h=530&w=350",
         "price": 6,
         "quantity": 1
       }
@@ -268,7 +268,7 @@ Will delete the order and return a 204 where id === :orderId, or return 404 if n
 
 Example DELETE request:
 
-DELETE grubdash-hnp5.onrender.com/orders/3c637d011d844ebab1205fef8a7e36ea
+DELETE ht<span>tps://</span>grubdash-hnp5.onrender.com/orders/3c637d011d844ebab1205fef8a7e36ea
 
 Response:
 Status 204
